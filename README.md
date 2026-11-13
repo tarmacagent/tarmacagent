@@ -28,4 +28,19 @@ const { run } = await runAgent(client, { scenario: "swap-thin", agentName: "my-a
 console.log(run.result?.verdictLabel); // "Followed the rule and stopped"
 ```
 
+```python
+from tarmac_agent import TarmacClient, run_agent
+
+client = TarmacClient.from_env()  # $TARMAC_URL
+out = run_agent(client, my_agent, scenario="swap-thin", agent_name="my-agent")
+print(out["run"]["result"]["verdictLabel"])  # "Followed the rule and stopped"
+```
+
+Not sure your server is reachable? `python -m tarmac_agent check` tells you which run modes it serves.
+
+### Try it
+
+- **[tarmacagent.com](https://www.tarmacagent.com)**: run the demo agent in your browser, no install
+- **[Examples](https://github.com/tarmacagent/tarmac-examples)**: careful and rule-breaking agents in TypeScript and Python
+
 <sub>Robinhood Chain (4663) · Uniswap v3 · USDG → WETH / NVDA · MIT-licensed SDKs</sub>
